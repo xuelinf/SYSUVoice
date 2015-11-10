@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 import markdown
 import re
 from django.core.urlresolvers import reverse
-# Create your models here.
 
 
 class topic(models.Model):
@@ -18,9 +17,9 @@ class topic(models.Model):
     last_replied = models.DateTimeField(blank=True, null=True)
     deleted = models.BooleanField(default=False)
     order = models.IntegerField(default=10)
-    
+
     class Meta():
-        ordering = ['order' ,'-time_created']
+        ordering = ['order', '-time_created']
 
     def __unicode__(self):
         return self.title
@@ -36,7 +35,8 @@ class topic(models.Model):
                                                   safe_mode='escape')
         self.reply_count = self.post_set.filter(deleted=False).count()
         if self.reply_count:
-            self.last_replied = self.post_set.filter(deleted=False).latest('time_created').time_created
+            self.last_replied = self.post_set.filter(
+                deleted=False).latest('time_created').time_created
         to = []
         for u in re.findall(r'@(.*?)\s', self.content_rendered):
             try:
