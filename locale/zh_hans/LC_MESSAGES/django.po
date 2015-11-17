@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-10 21:04+0800\n"
+"POT-Creation-Date: 2015-11-17 15:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,9 +23,13 @@ msgstr ""
 msgid "page %(pager)s"
 msgstr "第%(pager)s页"
 
+#: template/common/base.html:40
+msgid "bbs name"
+msgstr "中大之音"
+
 #: template/common/base.html:44
-msgid "recent post"
-msgstr "最近主题"
+msgid "hottest post"
+msgstr "热议话题"
 
 #: template/common/base.html:45
 msgid "all nodes"
@@ -40,7 +44,7 @@ msgid "Search"
 msgstr "搜索"
 
 #: template/common/base.html:71
-msgid "copyright"
+msgid "copyright by"
 msgstr "数据库大作业：赵飞 张凯寓"
 
 #: template/widget/topic-list.html:9
@@ -83,21 +87,3 @@ msgstr "注册"
 #: template/widget/user-panel.html:54
 msgid "new messages"
 msgstr "未读消息"
-
-#~ msgid "links"
-#~ msgstr "链接"
-
-#~ msgid "nodes"
-#~ msgstr "节点"
-
-#~ msgid "site stat"
-#~ msgstr "站点统计"
-
-#~ msgid "number of users"
-#~ msgstr "用户数量"
-
-#~ msgid "number of topics"
-#~ msgstr "话题数量"
-
-#~ msgid "number of replies"
-#~ msgstr "回复数目"

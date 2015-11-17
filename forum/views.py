@@ -156,22 +156,21 @@ def search(request, keyword):
          'post_list_title': _('search %s') % (keyword), })
 
 
-def recent(request):
+def hottest(request):
     try:
         page = request.GET['page']
     except:
         page = None
     if page == '1':
         page = None
-    topics = topic.objects.all().filter(deleted=False)
+    topics = topic.objects.all().filter(deleted=False).order_by('-reply_count')
     return render_to_response(
         'forum/index.html',
         {'request': request, 'title': _('latest topics'),
          'conf': conf,
          'topics': topics,
-         'recent': 'reccent',
          'pager': page,
-         'post_list_title': _('latest posted topics'), })
+         'post_list_title': _('hottest posted topics'), })
 
 
 @staff_member_required

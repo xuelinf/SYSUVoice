@@ -36,7 +36,7 @@ urlpatterns = patterns(
     url(r'^search/(?P<keyword>.*?)/$',
         'search', name='search'),
 
-    url(r'^recent/$', 'recent', name='recent'),
+    url(r'^hottest/$', 'hottest', name='hottest'),
 
     url(r'^previewer/$', 'previewer', name='previewer'),
 )

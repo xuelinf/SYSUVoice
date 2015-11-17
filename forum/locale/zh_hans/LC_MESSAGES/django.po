@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-12 20:34+0800\n"
+"POT-Creation-Date: 2015-11-17 15:08+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,7 +70,7 @@ msgstr "编辑话题"
 msgid "node navigation"
 msgstr "节点导航"
 
-#: templates/forum/topic.html:25 views.py:234
+#: templates/forum/topic.html:25 views.py:233
 msgid "add appendix"
 msgstr "增加附言"
 
@@ -88,6 +88,7 @@ msgid "appendix %(number)s"
 msgstr "第 %(number)s 条附言"
 
 #: templates/forum/topic.html:56
+#, python-format
 msgid ""
 "\n"
 "\t\t\t%(reply_count)s reply\n"
@@ -125,7 +126,7 @@ msgstr "提醒"
 msgid "latest topics"
 msgstr "最近的话题"
 
-#: views.py:83 views.py:243
+#: views.py:83 views.py:242
 msgid "content cannot be empty"
 msgstr "内容不能为空"
 
@@ -133,7 +134,7 @@ msgstr "内容不能为空"
 msgid "create topic"
 msgstr "创建话题"
 
-#: views.py:129 views.py:216
+#: views.py:129 views.py:215
 msgid "title cannot be empty"
 msgstr "标题不能为空"
 
@@ -153,18 +154,20 @@ msgstr "%s-搜索结果"
 msgid "search %s"
 msgstr "搜索 %s"
 
-#: views.py:174
-msgid "latest posted topics"
+#: views.py:173
+#, fuzzy
+#| msgid "latest posted topics"
+msgid "hottest posted topics"
 msgstr "最近发表的话题"
 
-#: views.py:209
+#: views.py:208
 msgid "topic edit"
 msgstr "话题编辑"
 
-#: views.py:229
+#: views.py:228
 msgid "you cannot add appendix to other people's topic"
 msgstr "无权追加话题内容"
 
-#: views.py:257
+#: views.py:256
 msgid "all nodes"
 msgstr "所有节点"
