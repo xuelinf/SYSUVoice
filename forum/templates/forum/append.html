@@ -1,12 +1,13 @@
 {% extends 'base-with-sidebar.html' %}
 {% load i18n %}
 {% block left %}
+{% include 'user-panel.html' %}
+{% endblock %}
+{% block right %}
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<p class="panel-title">
-			{% blocktrans %}
-			create appendix to topic:{{topic}}  <!-- FIXME: does not rendered correctly -->
-			{% endblocktrans %}
+			{% blocktrans %}Create appendix to {{topic}}. {% endblocktrans %}
 		</p>
 	</div>
 	<div class="panel-body">
@@ -33,17 +34,11 @@
 			</div>
 		</form>
 		<div class="previewer">
-
 		</div>
 	</div>
 </div><!--end reply panel-->
 {% endblock %}
-{% block right %}
-{% include 'node-info.html' %}
-{% include 'user-panel.html' %}
-{% include 'node.html' %}
-{% include 'links.html' %}
-{% endblock %}
+
 {% block footer_ext %}
 <script src="{{STATIC_URL}}js/previewer.js"></script>
 {% endblock %}

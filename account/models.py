@@ -49,14 +49,13 @@ class profile(models.Model):
             dic['middle'] = self.avatar_url
             dic['large'] = self.avatar_url
         return dic
-        
+
 
 class social(models.Model):
     user = models.OneToOneField(User)
     access_token = models.CharField(max_length=255)
     openid = models.CharField(max_length=255)
     avatar = models.URLField()
-    
+
     def __unicode__(self):
         return self.user.username
-    

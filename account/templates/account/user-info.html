@@ -1,6 +1,10 @@
 {% extends 'base-with-sidebar.html' %}
 {% load humanize %}
 {% block left %}
+{% include 'user-panel.html' %}
+{% endblock %}
+
+{% block right %}
 <div class="panel panel-default">
     <div class="panel-body row">
         <div class="col-xs-2">
@@ -17,8 +21,4 @@
 </div>
 {% include 'topic-list.html' %}
 {% endblock %}
-{% block right %}
-{% include 'user-panel.html' %}
-{% include 'node.html' %}
-{% include 'links.html' %}
-{% endblock %}
+

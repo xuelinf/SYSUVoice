@@ -1,12 +1,9 @@
 {% extends 'base-with-sidebar.html' %}
 {% block left %}
-{% include 'topic-list.html' %}
+{% include 'user-panel.html' %}
 {% endblock %}
 {% block right %}
-{% include 'node-info.html' %}
-{% include 'user-panel.html' %}
-{% include 'node.html' %}
-{% include 'links.html' %}
+{% include 'topic-list.html' %}
 {% endblock %}
 {% block footer_ext %}
 <script> var host = "{{request.META.HTTP_HOST}}";var page = "{{page}}"; </script>

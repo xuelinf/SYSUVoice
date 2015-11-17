@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-10 16:51+0800\n"
+"POT-Creation-Date: 2015-11-12 20:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,31 +18,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: account/templates/account/change-password.html:6
-#: account/templates/account/user-setting.html:29 account/views.py:148
+#: templates/account/change-password.html:9
+#: templates/account/user-setting.html:34 views.py:172
 msgid "change password"
 msgstr "修改密码"
 
-#: templates/account/change-password.html:20
+#: templates/account/change-password.html:23
 msgid "current password"
 msgstr "原始密码"
 
-#: templates/account/change-password.html:26
+#: templates/account/change-password.html:29
 msgid "new password"
 msgstr "新密码"
 
-#: templates/account/change-password.html:33
+#: templates/account/change-password.html:36
 msgid "new password again"
-msgstr "重复"
+msgstr "重复密码"
 
-#: templates/account/change-password.html:42
-#: templates/account/user-avatar.html:29
-#: templates/account/user-setting.html:27
+#: templates/account/change-password.html:45
+#: templates/account/user-avatar.html:33
+#: templates/account/user-setting.html:32
 msgid "update"
 msgstr "更新"
 
 #: templates/account/login.html:6 templates/account/login.html.py:29
-#: views.py:91
+#: views.py:99
 msgid "sign in"
 msgstr "登陆"
 
@@ -62,7 +62,7 @@ msgstr "注册？"
 msgid "forget password?"
 msgstr "忘记密码？"
 
-#: templates/account/reg.html:6 views.py:58
+#: templates/account/reg.html:6 views.py:56
 msgid "register"
 msgstr "注册"
 
@@ -72,15 +72,15 @@ msgstr "字母，数字，下划线"
 
 #: templates/account/reg.html:23
 msgid "Email"
-msgstr "Email"
+msgstr "邮箱"
 
 #: templates/account/reg.html:33
 msgid "repeat password"
 msgstr "重复密码"
 
 #: templates/account/reg.html:39
-#: templates/account/reset-password-confirm.html:44
-#: templates/account/reset-password.html:43
+#: templates/account/reset-password-confirm.html:47
+#: templates/account/reset-password.html:46
 msgid "submit"
 msgstr "提交"
 
@@ -89,90 +89,131 @@ msgid "sign in?"
 msgstr "已有账户？"
 
 #: templates/account/reset-password-confirm.html:5
-#: templates/account/reset-password-confirm.html:35
+#: templates/account/reset-password-confirm.html:38
 #: templates/account/reset-password.html:5
-#: templates/account/reset-password.html:35
+#: templates/account/reset-password.html:38
 msgid "reset password"
 msgstr "密码重置"
 
-#: templates/account/user-avatar.html:6 templates/account/user-setting.html:30
+#: templates/account/reset-password-done.html:3
+msgid "Password reset"
+msgstr "重置密码"
+
+#: templates/account/reset-password-done.html:8
+msgid ""
+"We have sent you an email with a link to reset your password. Please check\n"
+"    your email and click the link to continue."
+msgstr "已经给您发送了重置密码链接，请登录您的邮箱查看。"
+
+#: templates/account/reset-password-email.html:2
+#, python-format
+msgid "password reset for email %(email)s. Follow the link below:"
+msgstr "要更改邮箱 %(email)s 的密码，请点击下面链接:"
+
+#: templates/account/user-avatar.html:10
+#: templates/account/user-setting.html:35
 msgid "avatar settings"
 msgstr "头像设置"
 
-#: templates/account/user-avatar.html:11
+#: templates/account/user-avatar.html:15
 msgid "upload new avatar(leave blank will not change your current avatar)"
 msgstr "上传新头像（留空不修改）"
 
-#: templates/account/user-avatar.html:13
+#: templates/account/user-avatar.html:17
 msgid "maximum 512K, png,jpg and gif only"
 msgstr "最大512k，png,jpg和gif格式"
 
-#: templates/account/user-avatar.html:15
+#: templates/account/user-avatar.html:19
 msgid "Use Gravatar"
 msgstr "使用Gravatar"
 
-#: templates/account/user-setting.html:6
+#: templates/account/user-mention.html:12
+msgid "Unread Mentions"
+msgstr "未读提醒"
+
+#: templates/account/user-mention.html:27
+#: templates/account/user-mention.html:61
+msgid "In post"
+msgstr "在评论 "
+
+#: templates/account/user-mention.html:29
+#: templates/account/user-mention.html:33
+#: templates/account/user-mention.html:63
+#: templates/account/user-mention.html:67
+msgid "Mentioned you"
+msgstr " 中提到了你"
+
+#: templates/account/user-mention.html:31
+#: templates/account/user-mention.html:65
+msgid "In topic"
+msgstr "在话题 "
+
+#: templates/account/user-mention.html:46
+msgid "Old Mentions"
+msgstr "已读提醒"
+
+#: templates/account/user-setting.html:11
 msgid "user settings"
 msgstr "用户设置"
 
-#: templates/account/user-setting.html:11
+#: templates/account/user-setting.html:16
 msgid "website"
 msgstr "网站"
 
-#: views.py:49
+#: views.py:45
 msgid "user info"
 msgstr "用户信息"
 
-#: views.py:52
+#: views.py:48
 #, python-format
 msgid "%s's topics"
 msgstr "%s的话题"
 
-#: views.py:69
+#: views.py:71
 msgid "username can only contain letters digits and underscore"
 msgstr "用户名只能包含字母，数字和下划线"
 
-#: views.py:73
+#: views.py:77
 msgid "username already exists"
 msgstr "用户名已经存在"
 
-#: views.py:77 views.py:155
+#: views.py:83 views.py:185
 msgid "passwords don't match, or are blank"
 msgstr "密码不匹配或为空"
 
-#: views.py:99
+#: views.py:110
 msgid "username does not exist"
 msgstr "用户名不存在"
 
-#: views.py:103
+#: views.py:117
 msgid "password is invalid"
 msgstr "密码不正确"
 
-#: views.py:114 views.py:123
+#: views.py:130 views.py:141
 msgid "settings"
 msgstr "设置"
 
-#: views.py:138
+#: views.py:159
 msgid "mentions"
 msgstr "提醒"
 
-#: views.py:161
+#: views.py:194
 msgid "password updated successfully"
 msgstr "密码修改成功"
 
-#: views.py:164
-msgid "unable to change your password, the current password may be invalid"
-msgstr "错误，可能是原始密码不对"
+#: views.py:200
+#, fuzzy
+msgid "the current password may be invalid"
+msgstr "原始密码错误"
 
-#: views.py:171
-#| msgid "avatar settings"
+#: views.py:211
 msgid "avatar setting"
 msgstr "头像设置"
 
-#: views.py:181
+#: views.py:221
 msgid "file too big"
 msgstr "文件太大"
 
-#: views.py:183
+#: views.py:224
 msgid "file type not permitted"
 msgstr "文件类型不允许"

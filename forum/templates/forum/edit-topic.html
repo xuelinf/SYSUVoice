@@ -1,6 +1,9 @@
 {% extends 'base-with-sidebar.html' %}
 {% load i18n %}
 {% block left %}
+{% include 'user-panel.html' %}
+{% endblock %}
+{% block right %}
 <div class="panel panel-default">
     <div class="panel-heading">
         <p class="panel-title">
@@ -37,16 +40,12 @@
                 </button>
             </div>
         </form>
-        
+
         <div class="previewer">
         </div>
         {% endif %}
     </div>
 </div><!--end reply panel-->
-{% endblock %}
-{% block right %}
-{% include 'user-panel.html' %}
-{% include 'links.html' %}
 {% endblock %}
 {% block footer_ext %}
 <script src="{{STATIC_URL}}js/previewer.js"></script>

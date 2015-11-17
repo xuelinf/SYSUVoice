@@ -1,5 +1,5 @@
 from django.contrib import admin
-from forum.models import topic, mention, notification, post, node
+from forum.models import topic, mention, post, node
 # Register your models here.
 
 

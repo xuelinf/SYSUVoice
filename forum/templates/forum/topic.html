@@ -1,6 +1,9 @@
 {% extends 'base-with-sidebar.html' %}
 {% load i18n %}
 {% block left %}
+{% include 'user-panel.html' %}
+{% endblock %}
+{% block right %}
 {% load humanize %}
 {% load pagination_tags %}
 {% load settingsvalue %}
@@ -78,7 +81,7 @@
 						</div>
 						<div class="col-sm-2">
 							{% if request.user.is_authenticated %}
-							<a href="#create_reply" data-user="{{r.user.username}}" class="label-info label pull-right reply-btn">reply</a>
+							<a href="#create_reply" data-user="{{r.user.username}}" class="label-info label pull-right reply-btn">{% trans 'reply' %}</a>
 							{% endif %}
 						</div>
 					</div>
@@ -147,12 +150,6 @@
 	</div>
 
 </div><!--end reply panel-->
-{% endblock %}
-{% block right %}
-{% include 'node-info.html' %}
-{% include 'user-panel.html' %}
-{% include 'node.html' %}
-{% include 'links.html' %}
 {% endblock %}
 {% block footer_ext %}
 <script src="{{STATIC_URL}}js/previewer.js"></script>

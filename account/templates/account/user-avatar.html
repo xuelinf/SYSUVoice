@@ -1,6 +1,10 @@
  {% extends 'base-with-sidebar.html' %}
  {% load i18n %}
 {% block left %}
+{% include 'user-panel.html' %}
+{% endblock %}
+
+{% block right %}
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">{% trans 'avatar settings' %}</h3>
@@ -32,9 +36,4 @@
         </div>
     </form>
 </div>
-{% endblock %}
-{% block right %}
-{% include 'user-panel.html' %}
-{% include 'node.html' %}
-{% include 'links.html' %}
 {% endblock %}

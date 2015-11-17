@@ -1,11 +1,15 @@
 {% extends 'base-with-sidebar.html' %}
+{% load i18n %}
 {% block left %}
-{% load humanize %}
+{% include 'user-panel.html' %}
+{% endblock %}
 
+{% block right %}
+{% load humanize %}
 <div class="panel panel-default">
     <div class="panel-heading">
         <p class="panel-title">
-            Unread Mentions
+            {%trans 'Unread Mentions' %}
         </p>
     </div>
     <ul class="list-group">
@@ -19,13 +23,14 @@
                         <span class="list-time">{{m.time_created | naturaltime}}</span>
                     </div>
                     <div class="reply-content">
-                        Mentioned you in
                         {% if m.post %}
-                        post 
+                        {%trans 'In post' %}
                         <a href="{% url 'topic_view' m.topic.id %}#post-{{m.post.id}}" > reply:{{m.topic.title}}</a>
+                        {%trans 'Mentioned you' %}
                         {% else %}
-                        topic 
+                        {%trans 'In topic' %}
                         <a href="{% url 'topic_view' m.topic.id %}" > {{m.topic.title}}</a>
+                        {%trans 'Mentioned you' %}
                         {% endif %}
                     </div>
                 </div>
@@ -38,7 +43,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <p class="panel-title">
-            Old Mentions
+            {%trans 'Old Mentions' %}
         </p>
     </div>
     <ul class="list-group">
@@ -52,13 +57,14 @@
                         <span class="list-time">{{m.time_created | naturaltime}}</span>
                     </div>
                     <div class="reply-content">
-                        Mentioned you in
                         {% if m.post %}
-                        post 
+                        {%trans 'In post' %}
                         <a href="{% url 'topic_view' m.topic.id %}#post-{{m.post.id}}" > reply:{{m.topic.title}}</a>
+                        {%trans 'Mentioned you' %}
                         {% else %}
-                        topic 
+                        {%trans 'In topic' %}
                         <a href="{% url 'topic_view' m.topic.id %}" > {{m.topic.title}}</a>
+                        {%trans 'Mentioned you' %}
                         {% endif %}
                     </div>
                 </div>
@@ -70,9 +76,3 @@
 
 
 {% endblock %}
-{% block right %}
-{% include 'user-panel.html' %}
-{% include 'node.html' %}
-{% include 'links.html' %}
-{% endblock %}
-

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-10 16:51+0800\n"
+"POT-Creation-Date: 2015-11-10 21:04+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,63 +23,39 @@ msgstr ""
 msgid "page %(pager)s"
 msgstr "第%(pager)s页"
 
-#: template/common/base.html:49
+#: template/common/base.html:44
 msgid "recent post"
 msgstr "最近主题"
 
-#: template/common/base.html:50
+#: template/common/base.html:45
 msgid "all nodes"
 msgstr "所有节点"
 
-#: template/common/base.html:55
+#: template/common/base.html:50
 msgid "enter key words"
 msgstr "输入搜索内容"
 
-#: template/common/base.html:58
+#: template/common/base.html:53
 msgid "Search"
 msgstr "搜索"
 
-#: template/common/base.html:76
+#: template/common/base.html:71
 msgid "copyright"
 msgstr "数据库大作业：赵飞 张凯寓"
 
-#: template/widget/links.html:5
-msgid "links"
-msgstr "链接"
-
-#: template/widget/node.html:5
-msgid "nodes"
-msgstr "节点"
-
-#: template/widget/stat.html:5
-msgid "site stat"
-msgstr "站点统计"
-
-#: template/widget/stat.html:10
-msgid "number of users"
-msgstr "用户数量"
-
-#: template/widget/stat.html:13
-msgid "number of topics"
-msgstr "话题数量"
-
-#: template/widget/stat.html:16
-msgid "number of replies"
-msgstr "回复数目"
-
-#: template/widget/topic-list.html:11
+#: template/widget/topic-list.html:9
 msgid "home"
 msgstr "主页"
 
-#: template/widget/topic-list.html:15
+#: template/widget/topic-list.html:13
 msgid "new topic"
 msgstr "新话题"
 
-#: template/widget/topic-list.html:21
+#: template/widget/topic-list.html:19
 msgid "sorry, but we can't find the topics you need"
 msgstr "抱歉，没有找到你想要的内容"
 
-#: template/widget/topic-list.html:36
+#: template/widget/topic-list.html:34
 #, python-format
 msgid "%(clicks)s clicks"
 msgstr "%(clicks)s次点击"
@@ -107,3 +83,21 @@ msgstr "注册"
 #: template/widget/user-panel.html:54
 msgid "new messages"
 msgstr "未读消息"
+
+#~ msgid "links"
+#~ msgstr "链接"
+
+#~ msgid "nodes"
+#~ msgstr "节点"
+
+#~ msgid "site stat"
+#~ msgstr "站点统计"
+
+#~ msgid "number of users"
+#~ msgstr "用户数量"
+
+#~ msgid "number of topics"
+#~ msgstr "话题数量"
+
+#~ msgid "number of replies"
+#~ msgstr "回复数目"

@@ -45,12 +45,14 @@ class topic(models.Model):
                 pass
             else:
                 to.append(user)
-                self.content_rendered = re.sub('@%s' % (u),
-                                               '@<a href="%s" class="mention">%s</a>'
-                                               % (reverse('user_info',
-                                                          kwargs={'user_id': user.id}),
-                                                  u),
-                                               self.content_rendered)
+                self.content_rendered = re.sub(
+                    '@%s' % (u),
+                    '@<a href="%s" class="mention">%s</a>' % (
+                        reverse('user_info',
+                                kwargs={'user_id': user.id}
+                                ),
+                        u),
+                    self.content_rendered)
         super(topic, self).save(*args, **kwargs)
         if to and new:
             for t in to:
@@ -68,6 +70,7 @@ class topic(models.Model):
 class node(models.Model):
     title = models.CharField(max_length=12)
     description = models.TextField(blank=True)
+    # classify = models.TextField(blank=True)
 
     def __unicode__(self):
         return self.title
@@ -104,12 +107,13 @@ class post(models.Model):
                 pass
             else:
                 to.append(user)
-                self.content_rendered = re.sub('@%s' % (u),
-                                               '@<a href="%s" class="mention">%s</a>'
-                                               % (reverse('user_info',
-                                                          kwargs={'user_id': user.id}),
-                                                  u),
-                                               self.content_rendered)
+                self.content_rendered = re.sub(
+                    '@%s' % (u),
+                    '@<a href="%s" class="mention">%s</a>'
+                    % (reverse('user_info',
+                               kwargs={'user_id': user.id}),
+                       u),
+                    self.content_rendered)
         super(post, self).save(*args, **kwargs)
         if to and new:
             for t in to:
@@ -120,15 +124,6 @@ class post(models.Model):
                 m.topic = self.topic
                 m.save()
         self.topic.save()
-
-
-class notification(models.Model):
-    sender = models.ForeignKey(User, related_name='sent_notifications')
-    receiver = models.ForeignKey(User, related_name='received_nofitications')
-    topic = models.ForeignKey(topic, blank=True, null=True)
-    content = models.TextField(blank=True, null=True)
-    read = models.BooleanField(default=True)
-    time_created = models.DateTimeField(auto_now_add=True)
 
 
 class mention(models.Model):
