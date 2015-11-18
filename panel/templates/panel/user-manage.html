@@ -6,32 +6,33 @@
         <h1 class="page-header">{% trans 'user management' %}</h1>
     </div>
 </div>
-    <!-- /.col-lg-12 -->
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    {% trans 'all users' %}
-                </div>
-                <div class="panel-body">
-                    <div class="table-responsive">
-                        <table class="table table-default table-bordered table-hover" id="database">
-                            <thead>
-                                <tr>
-                                    <th>id</th>
-                                    <th>{% trans 'username' %}</th>
-                                    <th>{% trans 'email' %}</th>
-                                    <th>{% trans 'edit' %}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {% trans 'all users' %}
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-default table-bordered table-hover" id="database">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>{% trans 'username' %}</th>
+                                <th>{% trans 'email' %}</th>
+                                <th>{% trans 'edit' %}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
 {% endblock %}
 
 {% block footer_ext %}
@@ -60,11 +61,11 @@ function selected_id(){
     selected_rows = $('tr.active');
     ids = []
     selected_rows.each(
-            
+
             function(){
                 ids.push($(this).context.cells[0].childNodes[0].data);
             }
-            
+
         )
     return ids.toString()
 }

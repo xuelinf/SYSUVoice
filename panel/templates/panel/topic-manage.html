@@ -21,7 +21,7 @@
                                     <th>id</th>
                                     <th>{% trans 'title' %}</th>
                                     <th>{% trans 'username' %}</th>
-                                    <th>{% trans 'node title' %}</th>
+                                    <th>{% trans 'topics node' %}</th>
                                     <th>{% trans 'edit' %}</th>
                                 </tr>
                             </thead>
@@ -62,31 +62,23 @@ function selected_id(){
     selected_rows = $('tr.active');
     ids = []
     selected_rows.each(
-            
+
             function(){
                 ids.push($(this).context.cells[0].childNodes[0].data);
             }
-            
+
         )
     return ids.toString()
 }
 $(document).ready(
-        
         function(){
-        
             $('#bulk-delete').click(
-                
                 function(){
-                
                     $.get('{% url "panel:topic_bulk_delete" %}', {'ids': selected_id()});
                     location.reload();
-                
                 }
-
                 );
-        
         }
-        
         );
 </script>
 {% endblock %}

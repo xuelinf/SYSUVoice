@@ -26,8 +26,10 @@ class profile(models.Model):
 
     def latest_activity(self):
         d = {}
-        d['topic'] = self.user.topics.all().filter(deleted=False).order_by('-time_created')[0:10]
-        d['post'] = self.user.posts.all().filter(deleted=False).order_by('-time_created')[0:10]
+        d['topic'] = (self.user.topics.all().filter(deleted=False)
+                      .order_by('-time_created')[0:10])
+        d['post'] = (self.user.posts.all().filter(deleted=False)
+                     .order_by('-time_created')[0:10])
         return d
 
     def __unicode__(self):

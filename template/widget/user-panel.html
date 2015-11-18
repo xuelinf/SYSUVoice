@@ -1,28 +1,26 @@
 {% load i18n %}
 <div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title"> {% if request.user.is_authenticated %}
-        {{request.user.profile.username}}
-        {% else %}
-        {% trans 'title of this site' %}
-        {% endif %} </h3>
-    </div>
     <div class="panel-body">
         {% if request.user.is_authenticated %}
         <div class="row">
-            <a class="col-xs-2"><img title="{{request.user.profile.username}}" class="avatar-middle" src="{{request.user.profile.avatar.middle}}"></a>
-            <div class="padtop">
-                <div class="col-xs-3">
-                    <a href="{% url 'user_info' request.user.id %}" class="btn btn-block"> <span class="glyphicon glyphicon-home"></span> {% trans 'info' %} </a>
-                </div>
-                <div class="col-xs-3">
-                    <a href="{% url 'user_setting' %}" class="btn btn-block"> <span class="glyphicon glyphicon-cog"></span> {% trans 'settings' %} </a>
-                </div>
-                <div class="col-xs-3">
-                    <a href="{% url 'signout' %}" class="btn btn-block"> <span class="glyphicon glyphicon-log-out"></span> {% trans 'log out' %} </a>
-                </div>
+            <a class="col-xs-4"><img title="{{request.user.profile.username}}" class="avatar-middle" src="{{request.user.profile.avatar.middle}}"></a>
+            <div class="col-xs-8">
+            <p class="list-post-title"><strong>{{request.user.profile.username}}</strong></p>
+            <p class="list-meta">{% with user_id=request.user.id %}
+            {% blocktrans %} {{ user_id }} users {% endblocktrans %}{% endwith %}
+            </p>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">
+                <a href="{% url 'user_info' request.user.id %}" class="btn btn-block"> <span class="glyphicon glyphicon-home"></span> {% trans 'info' %} </a>
             </div>
-
+            <div class="col-xs-3">
+                <a href="{% url 'user_setting' %}" class="btn btn-block"> <span class="glyphicon glyphicon-cog"></span> {% trans 'settings' %} </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="{% url 'signout' %}" class="btn btn-block"> <span class="glyphicon glyphicon-log-out"></span> {% trans 'log out' %} </a>
+            </div>
         </div>
         {% else %}
         <p>{% trans 'content of this site' %}</p>

@@ -26,22 +26,24 @@
                             </div>
                             <div class="form-group">
                                 <label>{% trans 'node' %}</label>
-                                <input class="form-control" name="node" id="node-input" value="{{topic.node.title}}">
+                                <select class="form-control" name="node">
+                                    <option>{{ topic.node.title }}</option>
+                                    {% for onenode in allnodes %}
+                                    {% if onenode != topic.node.title %}
+                                    <option>{{onenode.title}}</option>
+                                    {% endif %}
+                                    {% endfor %}
+                                </select>
                             </div>
+
                             <div class="form-group">
                                 <label>{% trans 'content' %}</label>
                                 <textarea class="form-control" name="content" rows="10">{{topic.content}}</textarea>
                             </div>
-                            <div class="form-group">
-                                <label>{% trans 'order(0-99,default:99)'%}</label>
-                                <input class="form-control" name="order" value={{topic.order}}>
-                            </div>
                         </div>
-                        <!-- /.col-lg-6 (nested) -->
-                        <!-- /.col-lg-6 (nested) -->
                     </div>
                     <!-- /.row (nested) -->
-                    <button type="submit" class="btn btn-danger">{% trans 'submit' %}</button>
+                    <button type="submit" class="btn btn-success">{% trans 'submit' %}</button>
                 </form>
             </div>
             <!-- /.panel-body -->
@@ -75,17 +77,11 @@
 </style>
 <script>
 $(document).ready(
-
-
     $('#node-input').autocomplete(
-
         {
             'serviceUrl': "{% url 'panel:node_title_ajax' %}"
         }
-
     )
-
-
 );
 </script>
 {% endblock %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-18 11:51+0800\n"
+"POT-Creation-Date: 2015-11-18 21:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,9 +64,9 @@ msgstr "抱歉，没有找到你想要的内容"
 msgid "%(clicks)s clicks"
 msgstr "%(clicks)s次点击"
 
-#: template/widget/user-panel.html:7
-msgid "title of this site"
-msgstr "欢迎来到中大之音"
+#: template/widget/user-panel.html:10
+msgid " %(user_id)s users "
+msgstr "本站第 %(user_id)s 位会员"
 
 #: template/widget/user-panel.html:16
 msgid "info"
@@ -80,18 +80,21 @@ msgstr "设置"
 msgid "log out"
 msgstr "登出"
 
-#: template/widget/user-panel.html:28
+#: template/widget/user-panel.html:26
 msgid "content of this site"
 msgstr "欢迎来到中大之音。在这里你可以畅所欲言，在这里你可以舌战群儒。"
 
-#: template/widget/user-panel.html:31
+#: template/widget/user-panel.html:29
 msgid "sign in"
 msgstr "登陆"
 
-#: template/widget/user-panel.html:34
+#: template/widget/user-panel.html:32
 msgid "reg"
 msgstr "注册"
 
-#: template/widget/user-panel.html:41
+#: template/widget/user-panel.html:39
 msgid "new messages"
 msgstr "未读消息"
+
+#~ msgid "title of this site"
+#~ msgstr "欢迎来到中大之音"

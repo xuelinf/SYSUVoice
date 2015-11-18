@@ -4,11 +4,9 @@
 <html>
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>{{title}}-{% trans 'admin' %}-{% conf_value "sitename" %}</title>
+    <title>{% conf_value "sitename" %}-{% trans 'admin' %}</title>
 
     <!-- Core CSS - Include with every page -->
     <link href="/static/panel/css/bootstrap.min.css" rel="stylesheet">
@@ -25,33 +23,19 @@
 </head>
 
 <body>
-
     <div id="wrapper">
-
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">{% trans 'admin' %}</a>
+                <a class="navbar-brand">{% trans 'admin page' %}</a>
             </div>
             <!-- /.navbar-header -->
-
 
             <!-- /.navbar-top-links -->
             <div class="navbar-default navbar-static-side" role="navigation">
                 <div class="sidebar-collapse">
                     <ul class="nav" id="side-menu">
-
                         <li>
-                        <a href="{% url 'panel:index' %}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
-
-                        <li>
-                        <a href="#"><i class="fa fa-user fa-fw"></i> {% trans 'user management' %}<span class="fa arrow"></span></a>
+                        <a><i class="fa fa-user fa-fw"></i> {% trans 'user management' %}<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li>
                             <a href="{% url 'panel:user_manage' %}"><i class="fa fa-users fa-fw"></i> {% trans 'all users' %}</a>
@@ -61,7 +45,7 @@
                         </li>
 
                         <li>
-                        <a href="#"><i class="fa fa-square fa-fw"></i> {% trans 'node management' %}<span class="fa arrow"></span></a>
+                        <a><i class="fa fa-square fa-fw"></i> {% trans 'node management' %}<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li>
                             <a href="{% url 'panel:node_manage' %}"><i class="fa fa-sitemap fa-fw"></i> {% trans 'all nodes' %}</a>
@@ -75,7 +59,7 @@
                         </li>
 
                         <li>
-                        <a href="#"><i class="fa fa-comment fa-fw"></i> {% trans 'content management' %}<span class="fa arrow"></span></a>
+                        <a><i class="fa fa-comment fa-fw"></i> {% trans 'content management' %}<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li>
                             <a href="{% url 'panel:topic_manage' %}"><i class="fa fa-comments fa-fw"></i> {% trans 'all topics' %}</a>

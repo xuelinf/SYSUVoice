@@ -1,9 +1,9 @@
 from django.conf.urls import patterns, url
 
+
 urlpatterns = patterns(
     'panel.views',
     url(r'^$', 'index', name='index'),
-
     url(r'^user/all/$', 'user_manage', name="user_manage"),
     url(r'^user/(?P<uid>\d+)/edit/$', 'user_edit', name="user_edit"),
     url(r'^user/all/data-ss/$', 'user_table_ss', name="user_table_ss"),
@@ -18,5 +18,8 @@ urlpatterns = patterns(
     url(r'^topic/(?P<topic_id>\d+)/$', 'topic_edit', name="topic_edit"),
 
     url(r'^ajax/node/$', 'node_title_ajax', name="node_title_ajax"),
-    url(r'^ajax/topic/bulk-delete/$', 'topic_bulk_delete', name="topic_bulk_delete"),
+    url(r'^ajax/topic/bulk-delete/$',
+        'topic_bulk_delete',
+        name="topic_bulk_delete"),
+    url(r'^edit/success/$', 'edit_success', name="edit_success"),
 )

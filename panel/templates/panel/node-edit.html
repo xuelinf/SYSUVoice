@@ -28,13 +28,24 @@
                                 <label>{% trans 'node description' %}</label>
                                 <textarea class="form-control" name="description" rows="3">{{node.description}}</textarea>
                             </div>
+                            <div class="form-group">
+                                <label>{% trans 'node classify' %}</label>
+                                <select class="form-control" name="classify">
+                                    <option>{{node.category}}</option>
+                                    {% for class in classifies %}
+                                    {% if class != node.category %}
+                                        <option>{{class}}</option>
+                                    {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </div>
                         </div>
                         <!-- /.col-lg-6 (nested) -->
 
                         <!-- /.col-lg-6 (nested) -->
                     </div>
                     <!-- /.row (nested) -->
-                    <button type="submit" class="btn btn-danger">{% trans 'submit' %}</button>
+                    <button type="submit" class="btn btn-success">{% trans 'submit' %}</button>
                 </form>
             </div>
             <!-- /.panel-body -->

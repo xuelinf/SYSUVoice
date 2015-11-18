@@ -16,7 +16,7 @@ urlpatterns = patterns('',
                        url(r'^user/', include('account.urls')),
                        url(r'^api/forum/',
                            include(forum.urls.api_urlpatterns)),
-                       url(r'^panel/', include('panel.urls',
+                       url(r'^manage/', include('panel.urls',
                            namespace='panel', app_name='panel')),
                        )
 

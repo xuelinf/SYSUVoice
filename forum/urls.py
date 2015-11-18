@@ -23,20 +23,15 @@ urlpatterns = patterns(
         'del_topic', name='delete_topic'),
     url(r'^topic/(?P<topic_id>\d+)/edit/$',
         'edit_topic', name='edit_topic'),
-
     url(r'^post/(?P<post_id>\d+)/delete/$',
         'del_reply', name='delete_post'),
-
     url(r'^node/$', 'node_all', name='node_all'),
     url(r'^node/(?P<node_id>\d+)/$',
         'node_view', name='node_view'),
     url(r'^node/(?P<node_id>\d+)/create/$',
         'create_topic', name='create_topic'),
-
     url(r'^search/(?P<keyword>.*?)/$',
         'search', name='search'),
-
     url(r'^hottest/$', 'hottest', name='hottest'),
-
     url(r'^previewer/$', 'previewer', name='previewer'),
 )
