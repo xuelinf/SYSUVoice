@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-17 15:07+0800\n"
+"POT-Creation-Date: 2015-11-18 11:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,27 +23,27 @@ msgstr ""
 msgid "page %(pager)s"
 msgstr "第%(pager)s页"
 
-#: template/common/base.html:40
+#: template/common/base.html:35
 msgid "bbs name"
 msgstr "中大之音"
 
-#: template/common/base.html:44
+#: template/common/base.html:39
 msgid "hottest post"
 msgstr "热议话题"
 
-#: template/common/base.html:45
+#: template/common/base.html:40
 msgid "all nodes"
 msgstr "所有节点"
 
-#: template/common/base.html:50
+#: template/common/base.html:45
 msgid "enter key words"
-msgstr "输入搜索内容"
+msgstr "输入关键字搜索"
 
-#: template/common/base.html:53
+#: template/common/base.html:48
 msgid "Search"
 msgstr "搜索"
 
-#: template/common/base.html:71
+#: template/common/base.html:66
 msgid "copyright by"
 msgstr "数据库大作业：赵飞 张凯寓"
 
@@ -64,6 +64,10 @@ msgstr "抱歉，没有找到你想要的内容"
 msgid "%(clicks)s clicks"
 msgstr "%(clicks)s次点击"
 
+#: template/widget/user-panel.html:7
+msgid "title of this site"
+msgstr "欢迎来到中大之音"
+
 #: template/widget/user-panel.html:16
 msgid "info"
 msgstr "信息"
@@ -76,14 +80,18 @@ msgstr "设置"
 msgid "log out"
 msgstr "登出"
 
-#: template/widget/user-panel.html:33
+#: template/widget/user-panel.html:28
+msgid "content of this site"
+msgstr "欢迎来到中大之音。在这里你可以畅所欲言，在这里你可以舌战群儒。"
+
+#: template/widget/user-panel.html:31
 msgid "sign in"
 msgstr "登陆"
 
-#: template/widget/user-panel.html:36
+#: template/widget/user-panel.html:34
 msgid "reg"
 msgstr "注册"
 
-#: template/widget/user-panel.html:54
+#: template/widget/user-panel.html:41
 msgid "new messages"
 msgstr "未读消息"

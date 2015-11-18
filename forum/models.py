@@ -68,12 +68,19 @@ class topic(models.Model):
 
 
 class node(models.Model):
-    title = models.CharField(max_length=12)
+    title = models.CharField(max_length=160)
     description = models.TextField(blank=True)
-    # classify = models.TextField(blank=True)
+    category = models.ForeignKey('classify')
 
     def __unicode__(self):
         return self.title
+
+
+class classify (models.Model):
+    name = models.CharField(primary_key=True, max_length=160)
+
+    def __unicode__(self):
+        return self.name
 
 
 class post(models.Model):

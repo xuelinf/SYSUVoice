@@ -9,7 +9,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import user_passes_test
 import json
 from django.db.models import Q
-# Create your views here.
 
 
 @user_passes_test(lambda u: u.is_superuser, login_url=reverse('signin'))

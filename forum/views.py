@@ -9,7 +9,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from fairy import conf
-from forum.models import topic, post, node, appendix
+from forum.models import topic, post, node, classify, appendix
 import json
 import markdown
 import operator
@@ -250,7 +250,11 @@ def add_appendix(request, topic_id):
 
 def node_all(request):
     nodes = {}
-    nodes[u'分类1'] = list(node.objects.filter(id__in=[1]).all())
+    all_classifiy = classify.objects.all()
+    for every_classify in all_classifiy:
+        nodes[every_classify] = list(
+            node.objects.filter(category=every_classify).all())
+
     return render_to_response(
         'forum/node-all.html', {'request': request,
                                 'title': _('all nodes'),

@@ -36,17 +36,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">{% conf_value "sitename" %}-{% trans 'admin' %}</a>
+                <a class="navbar-brand" href="#">{% trans 'admin' %}</a>
             </div>
             <!-- /.navbar-header -->
 
-            
-            <!-- /.navbar-top-links -->
 
+            <!-- /.navbar-top-links -->
             <div class="navbar-default navbar-static-side" role="navigation">
                 <div class="sidebar-collapse">
                     <ul class="nav" id="side-menu">
-                        
+
                         <li>
                         <a href="{% url 'panel:index' %}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
@@ -59,7 +58,7 @@
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
-                        </li> 
+                        </li>
 
                         <li>
                         <a href="#"><i class="fa fa-square fa-fw"></i> {% trans 'node management' %}<span class="fa arrow"></span></a>
