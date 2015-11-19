@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-18 21:21+0800\n"
+"POT-Creation-Date: 2015-11-19 09:28+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,6 +47,10 @@ msgstr "搜索"
 msgid "copyright by"
 msgstr "数据库大作业：赵飞 张凯寓"
 
+#: template/common/error.html:14
+msgid "Go back"
+msgstr "返回"
+
 #: template/widget/topic-list.html:9
 msgid "home"
 msgstr "主页"
@@ -65,6 +69,7 @@ msgid "%(clicks)s clicks"
 msgstr "%(clicks)s次点击"
 
 #: template/widget/user-panel.html:10
+#, python-format
 msgid " %(user_id)s users "
 msgstr "本站第 %(user_id)s 位会员"
 

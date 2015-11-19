@@ -29,7 +29,7 @@
                                 <select class="form-control" name="node">
                                     <option>{{ topic.node.title }}</option>
                                     {% for onenode in allnodes %}
-                                    {% if onenode != topic.node.title %}
+                                    {% if onenode != topic.node %}
                                     <option>{{onenode.title}}</option>
                                     {% endif %}
                                     {% endfor %}

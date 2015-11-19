@@ -11,7 +11,7 @@ import json
 from django.db.models import Q
 
 
-@user_passes_test(lambda u: u.is_superuser, login_url=reverse('signin'))
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
 def index(request):
     return render_to_response('panel/index.html', {'title': _('home')})
 
@@ -23,7 +23,7 @@ def user_manage(request):
         {'title': _('user management')})
 
 
-@user_passes_test(lambda u: u.is_superuser, login_url=reverse('signin'))
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
 def user_table_data(request):
     data = {}
     data['aaData'] = []
@@ -33,7 +33,7 @@ def user_table_data(request):
     return HttpResponse(json.dumps(data))
 
 
-@user_passes_test(lambda u: u.is_superuser, login_url=reverse('signin'))
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
 def user_table_ss(request):
     fields = ['id', 'username', 'email']
     order_dir = request.GET.get('sSortDir_0')
@@ -71,7 +71,7 @@ def user_table_ss(request):
     return HttpResponse(json.dumps(data))
 
 
-@user_passes_test(lambda u: u.is_superuser, login_url=reverse('signin'))
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
 def user_edit(request, uid):
     u = User.objects.get(id=uid)
     if request.method == 'GET':
@@ -116,14 +116,14 @@ def user_edit(request, uid):
             reverse('panel:edit_success'))
 
 
-@user_passes_test(lambda u: u.is_superuser, login_url=reverse('signin'))
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
 def node_manage(request):
     return render_to_response(
         'panel/node-manage.html',
         {'title': _('node management')})
 
 
-@user_passes_test(lambda u: u.is_superuser, login_url=reverse('signin'))
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
 def node_table_ss(request):
     fields = ['id', 'title']
     order_dir = request.GET.get('sSortDir_0')
@@ -161,7 +161,7 @@ def node_table_ss(request):
     return HttpResponse(json.dumps(data))
 
 
-@user_passes_test(lambda u: u.is_superuser, login_url=reverse('signin'))
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
 def node_edit(request, node_id):
     n = node.objects.get(id=node_id)
     all_classify = classify.objects.all()
@@ -185,7 +185,7 @@ def node_edit(request, node_id):
         return HttpResponseRedirect(reverse('panel:edit_success'))
 
 
-@user_passes_test(lambda u: u.is_superuser, login_url=reverse('signin'))
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
 def node_create(request):
     if request.method == 'GET':
         all_classify = classify.objects.all()
@@ -207,14 +207,14 @@ def node_create(request):
         return HttpResponseRedirect(reverse('panel:edit_success'))
 
 
-@user_passes_test(lambda u: u.is_superuser, login_url=reverse('signin'))
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
 def topic_manage(request):
     return render_to_response(
         'panel/topic-manage.html',
         {'title': _('topic management')})
 
 
-@user_passes_test(lambda u: u.is_superuser, login_url=reverse('signin'))
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
 def topic_edit(request, topic_id):
     t = topic.objects.get(id=topic_id)
     allnodes = node.objects.all()
@@ -236,7 +236,7 @@ def topic_edit(request, topic_id):
         return HttpResponseRedirect(reverse('panel:edit_success'))
 
 
-@user_passes_test(lambda u: u.is_superuser, login_url=reverse('signin'))
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
 def topic_table_ss(request):
     fields = ['id', 'title', 'user__username', 'node__title']
     order_dir = request.GET.get('sSortDir_0')
@@ -280,7 +280,7 @@ def topic_table_ss(request):
     return HttpResponse(json.dumps(data))
 
 
-@user_passes_test(lambda u: u.is_superuser, login_url=reverse('signin'))
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
 def node_title_ajax(request):
     key = request.GET.get('query')
     condition = Q(title__contains=key)
@@ -292,7 +292,7 @@ def node_title_ajax(request):
     return HttpResponse(json.dumps(data))
 
 
-@user_passes_test(lambda u: u.is_superuser, login_url=reverse('signin'))
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
 def topic_bulk_delete(request):
     ids = request.GET['ids']
     ids = ids.split(',')
@@ -305,7 +305,7 @@ def topic_bulk_delete(request):
     return HttpResponse(ts)
 
 
-@user_passes_test(lambda u: u.is_superuser, login_url=reverse('signin'))
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
 def edit_success(request):
     return render_to_response(
         'panel/edit_success.html',

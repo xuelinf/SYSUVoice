@@ -17,15 +17,13 @@ from fairy import conf
 from forum.views import error
 
 import os
-
 import random
-# Create your views here.
+
 
 storage = FileSystemStorage(
     location=conf.UPLOAD_PATH,
     base_url='/static/upload/'
 )
-
 alphanumeric = RegexValidator(
     r'^[0-9a-zA-Z\_]*$',
     'Only alphanumeric characters and underscore are allowed.')
@@ -257,9 +255,49 @@ def GenerateUsername(nickname):
     i = 0
     MAX = 999
     while (i < MAX):
-        username = nickname + '__qq__' + str(random.randint(0, MAX))
+        username = nickname + str(random.randint(0, MAX))
         try:
             User.objects.get(username=username)
         except User.DoesNotExist:
             return username
     raise Exception('All random username are taken')
+
+
+def super_login(request):
+    if request.method == 'GET':
+        return render_to_response(
+            'account/super_login.html',
+            {'title': _('sign in')},
+            context_instance=RequestContext(request))
+    elif request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+
+        if not User.objects.filter(username=username).exists():
+            messages.add_message(
+                request,
+                messages.WARNING,
+                _('username does not exist'))
+            return HttpResponseRedirect(reverse('super_login'))
+
+        if user is None:
+            messages.add_message(
+                request,
+                messages.WARNING,
+                _('password is invalid'))
+            return HttpResponseRedirect(reverse('super_login'))
+
+        if not user.is_superuser:
+            messages.add_message(
+                request,
+                messages.WARNING,
+                _('not a administrator'))
+            return HttpResponseRedirect(reverse('super_login'))
+
+        login(request, user)
+        return render_to_response(
+            'panel/index.html',
+            {'request': request,
+             'title': _('home')},
+            context_instance=RequestContext(request))

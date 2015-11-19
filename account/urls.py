@@ -5,6 +5,7 @@ urlpatterns = patterns(
     url(r'^(?P<user_id>\d+)/info/$',
         'user_info', name='user_info'),
     url(r'^reg/$', 'reg', name='reg'),
+    url(r'^super/$', 'super_login', name='super_login'),
     url(r'^signin/$', 'user_login', name='signin'),
     url(r'^setting/$', 'setting', name='user_setting'),
     url(r'^signout/$', 'user_logout', name='signout'),
