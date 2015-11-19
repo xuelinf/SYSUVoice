@@ -3,7 +3,7 @@
 {% block inside_row %}
 <div class="panel panel-default col-md-6 col-md-offset-3">
     <form class="panel-body" role="form" method="post" action="{% url 'signin' %}">
-        <h2>{% trans 'sign in' %}</h2>
+        <h2 class="text-center" style="margin-bottom:1em">{% trans 'user sign in' %}</h2>
         {% csrf_token %}
         {% if messages %}
 		<div class="messages">
@@ -25,11 +25,11 @@
         </div>
 
         <div class="form-group">
-            <button class="btn btn-default">
+            <button class="btn btn-default btn-success pull-right">
                 {% trans 'sign in' %}
             </button>
-            <a class="btn btn-link" href="{% url 'reg' %}">{% trans 'reg?' %}</a>
-            <a class="btn btn-link" href="{% url 'password_reset' %}">{% trans 'forget password?' %}</a>
+            <a class="btn btn-link pull-right" href="{% url 'reg' %}">{% trans 'reg?' %}</a>
+            <a class="btn btn-link pull-right" href="{% url 'password_reset' %}">{% trans 'forget password?' %}</a>
         </div>
     </form>
 </div>

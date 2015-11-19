@@ -17,6 +17,7 @@ from fairy import conf
 from forum.views import error
 
 import os
+import re
 import random
 
 
@@ -69,16 +70,23 @@ def reg(request):
                 _('username can only contain letters digits and underscore'))
             return HttpResponseRedirect(reverse('reg'))
 
-        if User.objects.filter(username=username).exists():
+        if User.objects.filter(username=username).exists() or not username:
             messages.add_message(
                 request,
-                messages.WARNING, _('username already exists'))
+                messages.WARNING, _('username already exists, or are blank'))
             return HttpResponseRedirect(reverse('reg'))
 
         if password != password2 or password == '' or password2 == '':
             messages.add_message(
                 request,
                 messages.WARNING, _('passwords don\'t match, or are blank'))
+            return HttpResponseRedirect(reverse('reg'))
+
+        if (not re.match("[a-zA-z0-9]+\@[a-zA-Z0-9]+\.+[a-zA-Z]", email)
+                or not email):
+            messages.add_message(
+                request,
+                messages.WARNING, _('email address is invalid or blank'))
             return HttpResponseRedirect(reverse('reg'))
 
         user = User.objects.create_user(username, email, password)
