@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-19 09:28+0800\n"
+"POT-Creation-Date: 2015-11-20 16:18+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,189 +18,204 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: panel/templates/panel/base.html:9
+#: templates/panel/base.html:9
 msgid "admin"
 msgstr "后台"
 
-#: panel/templates/panel/base.html:29
+#: templates/panel/base.html:29
 msgid "admin page"
 msgstr "后台管理页面"
 
-#: panel/templates/panel/base.html:38 panel/templates/panel/user-manage.html:6
-#: panel/views.py:23
+#: templates/panel/base.html:38 templates/panel/user-manage.html:6 views.py:23
 msgid "user management"
 msgstr "用户管理"
 
-#: panel/templates/panel/base.html:41
-#: panel/templates/panel/user-manage.html:14
+#: templates/panel/base.html:41 templates/panel/user-manage.html:14
 msgid "all users"
 msgstr "所有用户"
 
-#: panel/templates/panel/base.html:48 panel/templates/panel/node-manage.html:6
-#: panel/templates/panel/node-manage.html:14 panel/views.py:123
+#: templates/panel/base.html:48 templates/panel/node-manage.html:6
+#: templates/panel/node-manage.html:14 views.py:123
 msgid "node management"
 msgstr "节点管理"
 
-#: panel/templates/panel/base.html:51
+#: templates/panel/base.html:51
 msgid "all nodes"
 msgstr "所有节点"
 
-#: panel/templates/panel/base.html:55 panel/templates/panel/node-create.html:7
-#: panel/views.py:194
+#: templates/panel/base.html:54 templates/panel/node-create.html:7
+#: views.py:194
 msgid "create node"
 msgstr "创建节点"
 
-#: panel/templates/panel/base.html:62
+#: templates/panel/base.html:58
+msgid "all classify"
+msgstr "所有分类"
+
+#: templates/panel/base.html:61
+msgid "create classify"
+msgstr "创建分类"
+
+#: templates/panel/base.html:68
 msgid "content management"
 msgstr "内容管理"
 
-#: panel/templates/panel/base.html:65
+#: templates/panel/base.html:71
 msgid "all topics"
 msgstr "所有话题"
 
-#: panel/templates/panel/edit_success.html:7 panel/views.py:312
-msgid "edit information success."
-msgstr "信息更改成功"
+#: templates/panel/classify-create.html:7 views.py:244
+msgid "add classify"
+msgstr "增加分类"
 
-#: panel/templates/panel/node-create.html:16
-msgid "new node"
-msgstr "新的节点"
+#: templates/panel/classify-create.html:16
+msgid "new classify"
+msgstr "新分类"
 
-#: panel/templates/panel/node-create.html:24
-#: panel/templates/panel/node-edit.html:24
-msgid "node title"
-msgstr "节点标题"
+#: templates/panel/classify-create.html:24
+#: templates/panel/classify-manage.html:21
+msgid "classify name"
+msgstr "分类名字"
 
-#: panel/templates/panel/node-create.html:28
-#: panel/templates/panel/node-edit.html:28
-msgid "node description"
-msgstr "节点描述"
-
-#: panel/templates/panel/node-create.html:32
-#: panel/templates/panel/node-edit.html:32
-msgid "node classify"
-msgstr "节点分类"
-
-#: panel/templates/panel/node-create.html:42
-#: panel/templates/panel/node-edit.html:48
-#: panel/templates/panel/topic-edit.html:46
-#: panel/templates/panel/user-edit.html:92
+#: templates/panel/classify-create.html:30 templates/panel/node-create.html:42
+#: templates/panel/node-edit.html:48 templates/panel/topic-edit.html:46
+#: templates/panel/user-edit.html:92
 msgid "submit"
 msgstr "提交"
 
-#: panel/templates/panel/node-edit.html:7 panel/views.py:171
+#: templates/panel/classify-manage.html:6 views.py:261
+msgid "classify management"
+msgstr "分类管理"
+
+#: templates/panel/classify-manage.html:14
+msgid "all classifies"
+msgstr "所有分类"
+
+#: templates/panel/edit_success.html:7 views.py:388
+msgid "edit information success."
+msgstr "信息更改成功"
+
+#: templates/panel/node-create.html:16
+msgid "new node"
+msgstr "新的节点"
+
+#: templates/panel/node-create.html:24 templates/panel/node-edit.html:24
+msgid "node title"
+msgstr "节点标题"
+
+#: templates/panel/node-create.html:28 templates/panel/node-edit.html:28
+msgid "node description"
+msgstr "节点描述"
+
+#: templates/panel/node-create.html:32 templates/panel/node-edit.html:32
+msgid "node classify"
+msgstr "节点分类"
+
+#: templates/panel/node-edit.html:7 views.py:171
 msgid "edit node"
 msgstr "编辑节点"
 
-#: panel/templates/panel/node-manage.html:22
-#: panel/templates/panel/topic-edit.html:20
-#: panel/templates/panel/topic-manage.html:22
+#: templates/panel/node-manage.html:22 templates/panel/topic-edit.html:20
+#: templates/panel/topic-manage.html:22
 msgid "title"
 msgstr "标题"
 
-#: panel/templates/panel/node-manage.html:23
-#: panel/templates/panel/topic-manage.html:25
-#: panel/templates/panel/user-manage.html:24 panel/views.py:67
-#: panel/views.py:157 panel/views.py:276
+#: templates/panel/node-manage.html:23 templates/panel/topic-manage.html:25
+#: templates/panel/user-manage.html:24 views.py:67 views.py:157 views.py:330
 msgid "edit"
 msgstr "编辑"
 
-#: panel/templates/panel/topic-edit.html:4 panel/views.py:224
-msgid "edit topic"
-msgstr "编辑话题"
-
-#: panel/templates/panel/topic-edit.html:24
-msgid "author"
-msgstr "作者"
-
-#: panel/templates/panel/topic-edit.html:28
-msgid "node"
-msgstr "节点"
-
-#: panel/templates/panel/topic-edit.html:40
-msgid "content"
-msgstr "内容"
-
-#: panel/templates/panel/topic-manage.html:6
-#: panel/templates/panel/topic-manage.html:14 panel/views.py:214
-msgid "topic management"
-msgstr "话题管理"
-
-#: panel/templates/panel/topic-manage.html:23
-#: panel/templates/panel/user-edit.html:25
-#: panel/templates/panel/user-manage.html:22
-msgid "username"
-msgstr "用户名"
-
-#: panel/templates/panel/topic-manage.html:24
-msgid "topics node"
-msgstr "所属节点"
-
-#: panel/templates/panel/topic-manage.html:32
+#: templates/panel/node-manage.html:30 templates/panel/topic-manage.html:32
 msgid "delete selected"
 msgstr "删除选中项"
 
-#: panel/templates/panel/user-edit.html:7
+#: templates/panel/topic-edit.html:4 views.py:278
+msgid "edit topic"
+msgstr "编辑话题"
+
+#: templates/panel/topic-edit.html:24
+msgid "author"
+msgstr "作者"
+
+#: templates/panel/topic-edit.html:28
+msgid "node"
+msgstr "节点"
+
+#: templates/panel/topic-edit.html:40
+msgid "content"
+msgstr "内容"
+
+#: templates/panel/topic-manage.html:6 templates/panel/topic-manage.html:14
+#: views.py:268
+msgid "topic management"
+msgstr "话题管理"
+
+#: templates/panel/topic-manage.html:23 templates/panel/user-edit.html:25
+#: templates/panel/user-manage.html:22
+msgid "username"
+msgstr "用户名"
+
+#: templates/panel/topic-manage.html:24
+msgid "topics node"
+msgstr "所属节点"
+
+#: templates/panel/user-edit.html:7
 msgid "modify user"
 msgstr "更改用户信息"
 
-#: panel/templates/panel/user-edit.html:23
+#: templates/panel/user-edit.html:23
 msgid "identity"
 msgstr "身份信息"
 
-#: panel/templates/panel/user-edit.html:29
+#: templates/panel/user-edit.html:29
 msgid "password"
 msgstr "密码"
 
-#: panel/templates/panel/user-edit.html:30
+#: templates/panel/user-edit.html:30
 msgid "leave empty will not change the current password"
 msgstr "留空不修改"
 
-#: panel/templates/panel/user-edit.html:33
-#: panel/templates/panel/user-manage.html:23
+#: templates/panel/user-edit.html:33 templates/panel/user-manage.html:23
 msgid "email"
 msgstr "Email"
 
-#: panel/templates/panel/user-edit.html:38
+#: templates/panel/user-edit.html:38
 msgid "user status"
 msgstr "用户状态"
 
-#: panel/templates/panel/user-edit.html:42
-#: panel/templates/panel/user-edit.html:44
+#: templates/panel/user-edit.html:42 templates/panel/user-edit.html.py:44
 msgid "active"
 msgstr "激活的"
 
-#: panel/templates/panel/user-edit.html:51
-#: panel/templates/panel/user-edit.html:53
+#: templates/panel/user-edit.html:51 templates/panel/user-edit.html.py:53
 msgid "superuser"
 msgstr "超级用户"
 
-#: panel/templates/panel/user-edit.html:61
+#: templates/panel/user-edit.html:61
 msgid "user profile"
 msgstr "用户资料"
 
-#: panel/templates/panel/user-edit.html:63
+#: templates/panel/user-edit.html:63
 msgid "nickname"
 msgstr "昵称"
 
-#: panel/templates/panel/user-edit.html:67
+#: templates/panel/user-edit.html:67
 msgid "location"
 msgstr "位置"
 
-#: panel/templates/panel/user-edit.html:71
+#: templates/panel/user-edit.html:71
 msgid "website"
 msgstr "网站"
 
-#: panel/templates/panel/user-edit.html:77
-#: panel/templates/panel/user-edit.html:81
-#: panel/templates/panel/user-edit.html:83
+#: templates/panel/user-edit.html:77 templates/panel/user-edit.html.py:81
+#: templates/panel/user-edit.html:83
 msgid "use Gravatar"
 msgstr "使用Gravatar"
 
-#: panel/views.py:16
+#: views.py:16
 msgid "home"
 msgstr "主页"
 
-#: panel/views.py:80
+#: views.py:80
 msgid "edit user"
 msgstr "编辑用户"

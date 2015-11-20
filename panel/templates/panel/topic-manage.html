@@ -44,29 +44,27 @@
 <script>
 $(document).ready(function() {
         $('#database').dataTable({
+            "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Chinese.json"},
             "bProcessing": true,
             "bServerSide": true,
             "bPaginate": true,
             "sAjaxSource": "{% url 'panel:topic_table_ss' %}",
-            "aoColumnDefs": [
-                      { 'bSortable': false, 'aTargets': [ -1 ] }
-                          ],
-                          "sDom": "<'row'<'col-sm-4'l><'col-sm-4'f><'col-sm-4'T>r>" + "t" + "<'row'<'col-sm-6'i><'col-sm-6'p>>",
-            "oTableTools": {
-                          "sRowSelect": "multi",
-                          "aButtons": [ "select_all", "select_none" ]
-                          },
+            "aoColumnDefs": [{ 'bSortable': false, 'aTargets': [ -1 ] }],
+            "sDom": "<'row'<'col-sm-4'l><'col-sm-8 text-right'f>r>" + "t" + "<'row'<'col-sm-4'i><'col-sm-8 text-right'p><'col-sm-0 text-right'T>>",
+            "oTableTools": {"sRowSelect": "multi",
+                            "aButtons": []},
             });
         });
+
+
 function selected_id(){
     selected_rows = $('tr.active');
     ids = []
     selected_rows.each(
-
             function(){
                 ids.push($(this).context.cells[0].childNodes[0].data);
             }
-
         )
     return ids.toString()
 }

@@ -43,20 +43,22 @@
 <script>
 $(document).ready(function() {
         $('#database').dataTable({
+            "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Chinese.json"},
             "bProcessing": true,
             "bServerSide": true,
             "bPaginate": true,
             "sAjaxSource": "{% url 'panel:user_table_ss' %}",
-            "aoColumnDefs": [
-                      { 'bSortable': false, 'aTargets': [ -1 ] }
-                          ],
-                          "sDom": "<'row'<'col-sm-4'l><'col-sm-4'f><'col-sm-4'T>r>" + "t" + "<'row'<'col-sm-6'i><'col-sm-6'p>>",
+            "aoColumnDefs": [{ 'bSortable': false, 'aTargets': [ -1 ] }],
+            "sDom": "<'row'<'col-sm-4'l><'col-sm-8 text-right'f>r>" + "t" + "<'row'<'col-sm-4'i><'col-sm-8 text-right'p><'col-sm-0 text-right'T>>",
             "oTableTools": {
                           "sRowSelect": "multi",
-                          "aButtons": [ "select_all", "select_none" ]
+                          "aButtons": []
                           },
             });
         });
+
+
 function selected_id(){
     selected_rows = $('tr.active');
     ids = []

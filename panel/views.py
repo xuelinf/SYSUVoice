@@ -16,7 +16,7 @@ def index(request):
     return render_to_response('panel/index.html', {'title': _('home')})
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
 def user_manage(request):
     return render_to_response(
         'panel/user-manage.html',
@@ -196,15 +196,77 @@ def node_create(request):
     elif request.method == 'POST':
         n = node()
         data = request.POST
-        title = data.get('title', 'empty')
+        title = data.get('title', None)
         description = data.get('description', None)
-        node_classify = classify()
-        node_classify.name = data.get('classify', 'Geek')
-        n.title = title
-        n.description = description
-        n.category = node_classify
-        n.save()
+        name = data.get('classify', None)
+        if not title or not description or not name:
+            all_classify = classify.objects.all()
+            return render_to_response(
+                'panel/node-create.html',
+                {'title': _('create node'), 'classifies': all_classify},
+                context_instance=RequestContext(request))
+        else:
+            n.title = title
+            node_classify = classify()
+            n.description = description
+            n.category = node_classify
+            node_classify.name = name
+            n.save()
+            return HttpResponseRedirect(reverse('panel:edit_success'))
+
+
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
+def classify_table_ss(request):
+    fields = ['name']
+    order_dir = request.GET.get('sSortDir_0')
+    order_field = int(request.GET.get('iSortCol_0'))
+    if order_dir == 'asc':
+        order_by = '%s' % fields[order_field]
+    else:
+        order_by = '-%s' % fields[order_field]
+    length = int(request.GET.get('iDisplayLength', 10))
+    key = request.GET.get('sSearch')
+    start = int(request.GET.get('iDisplayStart', 0))
+    classifies = []
+    if key:
+        condition = Q(name__contains=key)
+        classifies = classify.objects.filter(condition).order_by(order_by)
+    else:
+        classifies = classify.objects.all().order_by(order_by)
+    data = {}
+    data['aaData'] = []
+    data['iTotalDisplayRecords'] = len(classifies)
+    classifies = classifies[start:start + length]
+    data['iTotalRecords'] = classify.objects.count()
+    for c in classifies:
+        info_list = [c.name]
+        data['aaData'].append(info_list)
+    return HttpResponse(json.dumps(data))
+
+
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
+def classify_create(request):
+    if request.method == 'GET':
+        return render_to_response(
+            'panel/classify-create.html',
+            {'title': _('add classify')},
+            context_instance=RequestContext(request))
+    elif request.method == 'POST':
+        new_classify = classify()
+        data = request.POST
+        name = data.get('name', None)
+        new_classify.name = name
+        if not name:
+            return HttpResponseRedirect(reverse('panel:classify_create'))
+        new_classify.save()
         return HttpResponseRedirect(reverse('panel:edit_success'))
+
+
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
+def classify_manage(request):
+    return render_to_response(
+        'panel/classify-manage.html',
+        {'title': _('classify management')})
 
 
 @user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
@@ -302,6 +364,28 @@ def topic_bulk_delete(request):
         t.deleted = True
         t.save()
         ts.append(t)
+    return HttpResponse(ts)
+
+
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
+def node_bulk_delete(request):
+    ids = request.GET['ids']
+    ids = ids.split(',')
+    ts = []
+    for i in ids:
+        n = node.objects.filter(id=i)
+        n.delete()
+    return HttpResponse(ts)
+
+
+@user_passes_test(lambda u: u.is_superuser, login_url=reverse('super_login'))
+def classify_bulk_delete(request):
+    ids = request.GET['ids']
+    ids = ids.split(',')
+    ts = []
+    for i in ids:
+        c = classify.objects.filter(name=i)
+        c.delete()
     return HttpResponse(ts)
 
 
