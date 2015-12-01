@@ -11,7 +11,7 @@
             <img class="avatar-large" src="{{user.profile.avatar.large}}" title="{{user.profile.username}}"/>
         </div>
         <div class="col-xs-10">
-            <p class="list-post-title"><strong>{{user.profile.username}}</strong></p>
+            <p class="list-post-title"><strong>{{user.profile.username}} @{{user.username}}</p>
             <p class="list-meta">#{{user.id}} @ {{user.date_joined|naturaltime}}</p>
             {% if user.profile.website %}
             <p class="list-meta"><a target="_blank" href="{{user.profile.website}}">{{user.profile.website}}</a></p>

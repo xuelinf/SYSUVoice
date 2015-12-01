@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-19 09:28+0800\n"
+"POT-Creation-Date: 2015-11-28 17:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -100,6 +100,10 @@ msgstr "注册"
 #: template/widget/user-panel.html:39
 msgid "new messages"
 msgstr "未读消息"
+
+#: template/widget/user-panel.html:43
+msgid "site messages"
+msgstr "站内消息"
 
 #~ msgid "title of this site"
 #~ msgstr "欢迎来到中大之音"

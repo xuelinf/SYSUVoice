@@ -42,7 +42,8 @@
 <script src="/static/panel/js/tabletools.js"></script>
 <script src="/static/panel/js/plugins/dataTables/dataTables.bootstrap.js"></script>
 <script>
-$(document).ready(function() {
+$(document).ready(
+    function() {
         $('#database').dataTable({
             "language": {
             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Chinese.json"},
@@ -51,7 +52,7 @@ $(document).ready(function() {
             "bPaginate": true,
             "sAjaxSource": "{% url 'panel:topic_table_ss' %}",
             "aoColumnDefs": [{ 'bSortable': false, 'aTargets': [ -1 ] }],
-            "sDom": "<'row'<'col-sm-4'l><'col-sm-8 text-right'f>r>" + "t" + "<'row'<'col-sm-4'i><'col-sm-8 text-right'p><'col-sm-0 text-right'T>>",
+            "sDom": "<'row'<'col-sm-4'l><'col-sm-8 text-right'f>r>" + "t" + "<'row'<'col-sm-6'i><'col-sm-6 text-right'p><'col-sm-0 text-right'T>>",
             "oTableTools": {"sRowSelect": "multi",
                             "aButtons": []},
             });
@@ -68,6 +69,7 @@ function selected_id(){
         )
     return ids.toString()
 }
+
 $(document).ready(
         function(){
             $('#bulk-delete').click(

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-19 11:24+0800\n"
+"POT-Creation-Date: 2015-11-28 18:34+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,8 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: templates/account/change-password.html:9
-#: templates/account/user-setting.html:34 views.py:178
+#: templates/account/user-avatar.html:38
+#: templates/account/user-setting.html:46 views.py:183
 msgid "change password"
 msgstr "修改密码"
 
@@ -35,11 +36,23 @@ msgstr "新密码"
 msgid "new password again"
 msgstr "重复密码"
 
-#: templates/account/change-password.html:45
-#: templates/account/user-avatar.html:33
-#: templates/account/user-setting.html:32
+#: templates/account/change-password.html:46
+#: templates/account/user-avatar.html:35
+#: templates/account/user-setting.html:44
 msgid "update"
 msgstr "更新"
+
+#: templates/account/change-password.html:48
+#: templates/account/user-avatar.html:37
+#: templates/account/user-setting.html:11
+msgid "user settings"
+msgstr "用户设置"
+
+#: templates/account/change-password.html:49
+#: templates/account/user-avatar.html:10
+#: templates/account/user-setting.html:47
+msgid "avatar settings"
+msgstr "头像设置"
 
 #: templates/account/login.html:6
 msgid "user sign in"
@@ -56,7 +69,7 @@ msgid "password"
 msgstr "密码"
 
 #: templates/account/login.html:29 templates/account/super_login.html:39
-#: views.py:105 views.py:278
+#: views.py:105 views.py:283
 msgid "sign in"
 msgstr "登陆"
 
@@ -123,53 +136,52 @@ msgstr "要更改邮箱 %(email)s 的密码，请点击下面链接:"
 msgid "administrator sigin"
 msgstr "管理员登陆"
 
-#: templates/account/user-avatar.html:10
-#: templates/account/user-setting.html:35
-msgid "avatar settings"
-msgstr "头像设置"
-
 #: templates/account/user-avatar.html:15
 msgid "upload new avatar(leave blank will not change your current avatar)"
 msgstr "上传新头像（留空不修改）"
 
-#: templates/account/user-avatar.html:17
-msgid "maximum 512K, png,jpg and gif only"
-msgstr "最大512k，png,jpg和gif格式"
+#: templates/account/user-avatar.html:18
+msgid "maximum 512K, png, jpg and gif only"
+msgstr "图像最大512k，仅支持 png, jpg和gif格式"
 
-#: templates/account/user-avatar.html:19
+#: templates/account/user-avatar.html:20
 msgid "Use Gravatar"
 msgstr "使用Gravatar"
 
-#: templates/account/user-mention.html:12
+#: templates/account/user-mention.html:13
 msgid "Unread Mentions"
 msgstr "未读提醒"
 
-#: templates/account/user-mention.html:27
-#: templates/account/user-mention.html:61
+#: templates/account/user-mention.html:28
+#: templates/account/user-mention.html:63
 msgid "In post"
 msgstr "在评论 "
 
-#: templates/account/user-mention.html:29
-#: templates/account/user-mention.html:33
-#: templates/account/user-mention.html:63
-#: templates/account/user-mention.html:67
+#: templates/account/user-mention.html:30
+#: templates/account/user-mention.html:34
+#: templates/account/user-mention.html:65
+#: templates/account/user-mention.html:69
 msgid "Mentioned you"
 msgstr " 中提到了你"
 
-#: templates/account/user-mention.html:31
-#: templates/account/user-mention.html:65
+#: templates/account/user-mention.html:32
+#: templates/account/user-mention.html:67
 msgid "In topic"
 msgstr "在话题 "
 
-#: templates/account/user-mention.html:46
+#: templates/account/user-mention.html:48
 msgid "Old Mentions"
 msgstr "已读提醒"
 
-#: templates/account/user-setting.html:11
-msgid "user settings"
-msgstr "用户设置"
-
 #: templates/account/user-setting.html:16
+msgid "nickname"
+msgstr ""
+
+#: templates/account/user-setting.html:22
+msgid "location"
+msgstr ""
+
+#: templates/account/user-setting.html:28
 msgid "website"
 msgstr "网站"
 
@@ -190,7 +202,7 @@ msgstr "用户名只能包含字母，数字和下划线"
 msgid "username already exists, or are blank"
 msgstr "用户名已经存在或为空"
 
-#: views.py:82 views.py:191
+#: views.py:82 views.py:196
 msgid "passwords don't match, or are blank"
 msgstr "密码不匹配或为空"
 
@@ -198,46 +210,46 @@ msgstr "密码不匹配或为空"
 msgid "email address is invalid or blank"
 msgstr "邮箱地址不正确"
 
-#: views.py:116 views.py:289
+#: views.py:116 views.py:294
 msgid "username does not exist"
 msgstr "用户名不存在"
 
-#: views.py:123 views.py:296
+#: views.py:123 views.py:301
 msgid "password is invalid"
 msgstr "密码不正确"
 
-#: views.py:136 views.py:147
+#: views.py:136 views.py:149
 msgid "settings"
 msgstr "设置"
 
-#: views.py:165
+#: views.py:170
 msgid "mentions"
 msgstr "提醒"
 
-#: views.py:200
+#: views.py:205
 msgid "password updated successfully"
 msgstr "密码修改成功"
 
-#: views.py:206
+#: views.py:211
 msgid "the current password may be invalid"
 msgstr "原始密码错误"
 
-#: views.py:217
+#: views.py:222
 msgid "avatar setting"
 msgstr "头像设置"
 
-#: views.py:227
+#: views.py:232
 msgid "file too big"
 msgstr "文件太大"
 
-#: views.py:230
+#: views.py:235
 msgid "file type not permitted"
 msgstr "文件类型不允许"
 
-#: views.py:303
+#: views.py:308
 msgid "not a administrator"
 msgstr "该用户不是管理员"
 
-#: views.py:310
+#: views.py:315
 msgid "home"
 msgstr "管理页面"

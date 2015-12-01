@@ -82,8 +82,8 @@ def reg(request):
                 messages.WARNING, _('passwords don\'t match, or are blank'))
             return HttpResponseRedirect(reverse('reg'))
 
-        if (not re.match("[a-zA-z0-9]+\@[a-zA-Z0-9]+\.+[a-zA-Z]", email)
-                or not email):
+        if (not re.match("[a-zA-z0-9]+\@[a-zA-Z0-9]+\.+[a-zA-Z]", email) or
+                not email):
             messages.add_message(
                 request,
                 messages.WARNING, _('email address is invalid or blank'))
@@ -136,6 +136,8 @@ def setting(request):
              'title': _('settings')},
             context_instance=RequestContext(request))
     elif request.method == 'POST':
+        request.user.profile.nickname = request.POST['nickname']
+        request.user.profile.location = request.POST['location']
         request.user.profile.website = request.POST['website']
         request.user.email = request.POST['email']
         request.user.profile.save()
@@ -156,6 +158,7 @@ def user_logout(request):
 def view_mention(request):
     old = request.user.profile.old_mention()
     new = request.user.profile.unread_mention()
+
     for m in new:
         m.read = True
         m.save()
@@ -182,9 +185,9 @@ def change_password(request):
     elif request.method == 'POST':
         old = request.POST['old-password']
         new = request.POST['password']
-        if (request.POST['password'] != request.POST['password2']
-                or request.POST['password'] == ''
-                or request.POST['password2'] == ''):
+        if (request.POST['password'] != request.POST['password2'] or
+                request.POST['password'] == '' or
+                request.POST['password2'] == ''):
             messages.add_message(
                 request,
                 messages.WARNING,
@@ -225,8 +228,8 @@ def user_avatar(request):
             extension = os.path.splitext(f.name)[-1]
             if f.size > 524288:
                 return error(request, _('file too big'))
-            if (extension not in ['.jpg', '.png', '.gif']
-                    or ('image' not in f.content_type)):
+            if (extension not in ['.jpg', '.png', '.gif'] or
+                    ('image' not in f.content_type)):
                 return error(request, _('file type not permitted'))
             im = Image.open(f)
             im.thumbnail((120, 120))

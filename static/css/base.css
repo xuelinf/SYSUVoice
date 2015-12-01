@@ -213,5 +213,23 @@ a.add-new-btn {
 }
 
 p > img {
-    max-width: 100%;
+    max-width:100%;
+    /* This centers the image */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.panel-body p{
+	font-size: 1.3em;
+    font-family: Monaco, Courier, sans-serif, Arial, "Microsoft YaHei";
+}
+
+blockquote
+{
+    font-family: Monaco, Courier, sans-serif, Arial, "Microsoft YaHei";
+    font-size:0.9em;
+    background-color: #eee;
+    margin:1em 0;
+    border-left: 5px solid #009a61;
+    color:rgb(33, 36, 33);
 }

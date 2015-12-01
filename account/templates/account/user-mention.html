@@ -7,6 +7,7 @@
 {% block right %}
 {% load humanize %}
 <div class="panel panel-default">
+    {% if new%}
     <div class="panel-heading">
         <p class="panel-title">
             {%trans 'Unread Mentions' %}
@@ -25,7 +26,7 @@
                     <div class="reply-content">
                         {% if m.post %}
                         {%trans 'In post' %}
-                        <a href="{% url 'topic_view' m.topic.id %}#post-{{m.post.id}}" > reply:{{m.topic.title}}</a>
+                        <a href="{% url 'topic_view' m.topic.id %}#post-{{m.post.id}}" > {{m.topic.title}}</a>
                         {%trans 'Mentioned you' %}
                         {% else %}
                         {%trans 'In topic' %}
@@ -38,6 +39,7 @@
         </div>
         {% endfor %}
     </ul>
+    {% endif %}
 </div>
 
 <div class="panel panel-default">
@@ -59,7 +61,7 @@
                     <div class="reply-content">
                         {% if m.post %}
                         {%trans 'In post' %}
-                        <a href="{% url 'topic_view' m.topic.id %}#post-{{m.post.id}}" > reply:{{m.topic.title}}</a>
+                        <a href="{% url 'topic_view' m.topic.id %}#post-{{m.post.id}}" > {{m.topic.title}}</a>
                         {%trans 'Mentioned you' %}
                         {% else %}
                         {%trans 'In topic' %}

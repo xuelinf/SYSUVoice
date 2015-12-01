@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-19 09:28+0800\n"
+"POT-Creation-Date: 2015-11-29 23:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,83 +18,75 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: forum/templates/forum/append.html:10
+#: templates/forum/append.html:10
 #, python-format
 msgid "Create appendix to %(topic)s. "
 msgstr "创建主题 %(topic)s 的附言"
 
-#: forum/templates/forum/append.html:26 forum/templates/forum/append.html:27
-#: forum/templates/forum/create-topic.html:31
-#: forum/templates/forum/create-topic.html:32
-#: forum/templates/forum/edit-topic.html:31
-#: forum/templates/forum/edit-topic.html:32
-#: forum/templates/forum/topic.html:130
+#: templates/forum/append.html:26 templates/forum/append.html.py:27
+#: templates/forum/create-topic.html:31 templates/forum/create-topic.html:32
+#: templates/forum/edit-topic.html:31 templates/forum/edit-topic.html.py:32
+#: templates/forum/topic.html:130
 msgid "content"
 msgstr "内容"
 
-#: forum/templates/forum/append.html:30
-#: forum/templates/forum/create-topic.html:36
-#: forum/templates/forum/edit-topic.html:36
-#: forum/templates/forum/topic.html:135
+#: templates/forum/append.html:30 templates/forum/create-topic.html:36
+#: templates/forum/edit-topic.html:36 templates/forum/topic.html:135
 msgid "preview"
 msgstr "预览"
 
-#: forum/templates/forum/append.html:32
-#: forum/templates/forum/create-topic.html:39
-#: forum/templates/forum/edit-topic.html:39
-#: forum/templates/forum/topic.html:137
+#: templates/forum/append.html:32 templates/forum/create-topic.html:39
+#: templates/forum/edit-topic.html:39 templates/forum/topic.html:137
 msgid "submit"
 msgstr "提交"
 
-#: forum/templates/forum/create-topic.html:9 forum/views.py:44
+#: templates/forum/create-topic.html:9 views.py:44
 msgid "home"
 msgstr "首页"
 
-#: forum/templates/forum/create-topic.html:11
+#: templates/forum/create-topic.html:11
 msgid "new topic"
 msgstr "新话题"
 
-#: forum/templates/forum/create-topic.html:27
-#: forum/templates/forum/edit-topic.html:27
-#: forum/templates/forum/edit-topic.html:28
+#: templates/forum/create-topic.html:27 templates/forum/edit-topic.html:27
+#: templates/forum/edit-topic.html.py:28
 msgid "title"
 msgstr "标题"
 
-#: forum/templates/forum/create-topic.html:47
+#: templates/forum/create-topic.html:47
 msgid "please sign in before post"
 msgstr "请先登陆"
 
-#: forum/templates/forum/create-topic.html:49
-#: forum/templates/forum/topic.html:148
+#: templates/forum/create-topic.html:49 templates/forum/topic.html:148
 msgid "sign in"
 msgstr "登陆"
 
-#: forum/templates/forum/edit-topic.html:10
+#: templates/forum/edit-topic.html:10
 msgid "edit topic"
 msgstr "编辑话题"
 
-#: forum/templates/forum/node-all.html:10
+#: templates/forum/node-all.html:10
 msgid "node navigation"
 msgstr "节点导航"
 
-#: forum/templates/forum/topic.html:25 forum/views.py:233
+#: templates/forum/topic.html:25 views.py:233
 msgid "add appendix"
 msgstr "增加附言"
 
-#: forum/templates/forum/topic.html:28
+#: templates/forum/topic.html:28
 msgid "edit"
 msgstr "编辑"
 
-#: forum/templates/forum/topic.html:29 forum/templates/forum/topic.html:79
+#: templates/forum/topic.html:29 templates/forum/topic.html.py:79
 msgid "delete"
 msgstr "删除"
 
-#: forum/templates/forum/topic.html:43
+#: templates/forum/topic.html:43
 #, python-format
 msgid "appendix %(number)s"
 msgstr "第 %(number)s 条附言"
 
-#: forum/templates/forum/topic.html:56
+#: templates/forum/topic.html:56
 #, python-format
 msgid ""
 "\n"
@@ -113,64 +105,68 @@ msgstr[1] ""
 "\t\t\t%(reply_count)s 条回复\n"
 "\t\t\t"
 
-#: forum/templates/forum/topic.html:62 forum/templates/forum/topic.html:104
+#: templates/forum/topic.html:62 templates/forum/topic.html.py:104
 msgid "no replies yet"
 msgstr "暂无回复"
 
-#: forum/templates/forum/topic.html:84 forum/templates/forum/topic.html:113
+#: templates/forum/topic.html:84 templates/forum/topic.html.py:113
 msgid "reply"
 msgstr "回复"
 
-#: forum/templates/forum/topic.html:146
+#: templates/forum/topic.html:146
 msgid "please sign in before reply"
 msgstr "登录用户才能回复"
 
-#: forum/views.py:21
+#: views.py:21
 msgid "notice"
 msgstr "提醒"
 
-#: forum/views.py:41 forum/views.py:169
+#: views.py:41 views.py:169
 msgid "latest topics"
 msgstr "最近的话题"
 
-#: forum/views.py:83 forum/views.py:242
-msgid "content cannot be empty"
-msgstr "内容不能为空"
+#: views.py:83
+msgid "coment cannot be empty or too large"
+msgstr "内容不能为空或超过140字节"
 
-#: forum/views.py:118
+#: views.py:118
 msgid "create topic"
 msgstr "创建话题"
 
-#: forum/views.py:129 forum/views.py:215
+#: views.py:129 views.py:215
 msgid "title cannot be empty"
 msgstr "标题不能为空"
 
-#: forum/views.py:133
+#: views.py:133
 msgid "please sign in first"
 msgstr "登陆后方可发言"
 
-#: forum/views.py:153
+#: views.py:153
 #, python-format
 msgid "%s-search result"
 msgstr "%s-搜索结果"
 
-#: forum/views.py:156
+#: views.py:156
 #, python-format
 msgid "search %s"
 msgstr "搜索 %s"
 
-#: forum/views.py:173
+#: views.py:173
 msgid "hottest posted topics"
 msgstr "评论最多的话题"
 
-#: forum/views.py:208
+#: views.py:208
 msgid "topic edit"
 msgstr "话题编辑"
 
-#: forum/views.py:228
+#: views.py:228
 msgid "you cannot add appendix to other people's topic"
 msgstr "无权追加话题内容"
 
-#: forum/views.py:260
+#: views.py:242
+msgid "content cannot be empty"
+msgstr "内容不能为空"
+
+#: views.py:260
 msgid "all nodes"
 msgstr "所有节点"

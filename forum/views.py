@@ -76,11 +76,11 @@ def create_reply(request, topic_id):
         t = topic.objects.get(id=topic_id)
         r = post()
         r.topic = t
-        if request.POST['content']:
+        if request.POST['content'] and len(request.POST['content']) < 140:
             r.content = request.POST['content']
         else:
             messages.add_message(request, messages.WARNING,
-                                 _('content cannot be empty'))
+                                 _('coment cannot be empty or too large'))
             return HttpResponseRedirect(
                 reverse('topic_view',
                         kwargs={'topic_id': topic_id}))

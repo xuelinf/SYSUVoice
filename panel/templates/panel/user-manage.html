@@ -50,11 +50,8 @@ $(document).ready(function() {
             "bPaginate": true,
             "sAjaxSource": "{% url 'panel:user_table_ss' %}",
             "aoColumnDefs": [{ 'bSortable': false, 'aTargets': [ -1 ] }],
-            "sDom": "<'row'<'col-sm-4'l><'col-sm-8 text-right'f>r>" + "t" + "<'row'<'col-sm-4'i><'col-sm-8 text-right'p><'col-sm-0 text-right'T>>",
-            "oTableTools": {
-                          "sRowSelect": "multi",
-                          "aButtons": []
-                          },
+            "sDom": "<'row'<'col-sm-4'l><'col-sm-8 text-right'f>r>" + "t" + "<'row'<'col-sm-6'i><'col-sm-6 text-right'p><'col-sm-0 text-right'T>>",
+            "oTableTools": {"aButtons": []},
             });
         });
 
