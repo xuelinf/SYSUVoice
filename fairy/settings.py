@@ -64,7 +64,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'sysu',
         'USER': 'selfboot',
-        'PASSWORD': 'toortoor',
+        'PASSWORD': 'toor',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -98,8 +98,8 @@ MAX_UPLOAD_SIZE = "524288"
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_PORT = 25
-EMAIL_HOST_USER = '*****'
-EMAIL_HOST_PASSWORD = '*****'
+EMAIL_HOST_USER = '1291023320@qq.com'
+EMAIL_HOST_PASSWORD = 'qq1234!@'
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
