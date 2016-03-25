@@ -4,17 +4,30 @@ A Forum(BBS) based on Django, forked from [FairyBBS](https://github.com/ericls/F
 
 It looks like:
 
-讨论话题
+Topics
 
 ![][1]
 
-节点分类
+Nodes
 
 ![][2]
 
-后台管理页面
+Mange
 
 ![][3]
+
+Tested on Django 1.8.6
+
+# Features
+
+Major features:
+
+1. Whole user manage system, contains registration, login, change password, retrieve;
+2. Users can create topics, append topics, have comments on topics.
+3. Send notifications when others @YOU in anywhere.
+4. Markdown supported, whether in topics or comments.
+5. A convenient administrator page, can manage users, topics, nodes. 
+6. A simple keyword search egine, one can search some specific topics.
 
 # How to Run
 
