@@ -45,7 +45,7 @@ msgstr "搜索"
 
 #: template/common/base.html:66
 msgid "copyright by"
-msgstr "数据库大作业：赵飞 张凯寓"
+msgstr "联系我：xuezaigds@gmail.com"
 
 #: template/common/error.html:14
 msgid "Go back"

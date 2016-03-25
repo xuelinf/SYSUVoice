@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf.urls.static import static
 import forum
-from fairy import settings
+from SYSUVoice import settings
 
 admin.autodiscover()
 

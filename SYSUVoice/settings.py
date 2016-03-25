@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Django settings for fairy project.
+Django settings for SYSUVoice project.
 For more information on this file, see
-https://docs.djangoproject.com/en/1.6/topics/settings/
+https://docs.djangoproject.com/en/1.8/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.6/ref/settings/
+https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -26,7 +26,6 @@ ALLOWED_HOSTS = ['']
 
 
 # Application definition
-
 INSTALLED_APPS = (
     'account',
     'forum',
@@ -47,26 +46,35 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'fairy.middleware.SiteOff',
+    'SYSUVoice.middleware.SiteOff',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'pagination.middleware.PaginationMiddleware',
 )
 
-ROOT_URLCONF = 'fairy.urls'
-WSGI_APPLICATION = 'fairy.wsgi.application'
-
+ROOT_URLCONF = 'SYSUVoice.urls'
+WSGI_APPLICATION = 'SYSUVoice.wsgi.application'
 
 # Database
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'sysu',
+#         'USER': 'selfboot',
+#         'PASSWORD': 'toor',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3306',
+#     }
+# }
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sysu',
-        'USER': 'selfboot',
-        'PASSWORD': 'toor',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'ENGINE': '',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
@@ -79,7 +87,6 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
@@ -98,8 +105,8 @@ MAX_UPLOAD_SIZE = "524288"
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_PORT = 25
-EMAIL_HOST_USER = '1291023320@qq.com'
-EMAIL_HOST_PASSWORD = 'qq1234!@'
+EMAIL_HOST_USER = 'xxxxxxxxx@qq.com'
+EMAIL_HOST_PASSWORD = 'xxxxxxx'
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER

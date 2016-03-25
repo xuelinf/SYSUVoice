@@ -1,33 +1,33 @@
 from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
-from fairy.settings import BASE_DIR
-from forum.models import topic, post, node
+from SYSUVoice.settings import BASE_DIR
+from forum.models import topic, post
 import json
 import os
 
 UPLOAD_TO = os.path.join(BASE_DIR, 'static/upload')
 storage = FileSystemStorage(
-        location=UPLOAD_TO,
-        base_url='static/upload'
-        )
+    location=UPLOAD_TO,
+    base_url='static/upload'
+)
 
 
 def topic_data(topic_id):
     t = topic.objects.get(id=topic_id)
-    data=dict(id=t.id,
-              title=t.title,
-              content=t.content,
-              create_time=t.time_created.isoformat(),
-              user=dict(id=t.user.id,
-                           username=t.user.username),
-              reply_count=t.reply_count,
-              node_id=t.node.id,
-              node_name=t.node.title,
-              reply_id=[p.id for p in t.post_set.all()])
+    data = dict(id=t.id,
+                title=t.title,
+                content=t.content,
+                create_time=t.time_created.isoformat(),
+                user=dict(id=t.user.id,
+                          username=t.user.username),
+                reply_count=t.reply_count,
+                node_id=t.node.id,
+                node_name=t.node.title,
+                reply_id=[p.id for p in t.post_set.all()])
     return data
 
 
-def post_api(request ,post_id):
+def post_api(request, post_id):
     p = post.objects.get(id=post_id)
     data = dict(id=p.id,
                 content=p.content,

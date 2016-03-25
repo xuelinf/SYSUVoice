@@ -8,7 +8,7 @@ from django.db.models import Q
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from fairy import conf
+from SYSUVoice import conf
 from forum.models import topic, post, node, classify, appendix
 import json
 import markdown

@@ -1,10 +1,9 @@
-__author__ = 'TianShuo'
 from django import template
-from fairy import settings
-from fairy import conf
+from SYSUVoice import settings
+from SYSUVoice import conf
 
 register = template.Library()
-
+__author__ = 'Selfboot'
 
 '''
 usage:
@@ -17,13 +16,12 @@ then
 
 '''
 
+
 @register.simple_tag
 def settings_value(name):
     return getattr(settings, name, "")
 
+
 @register.simple_tag
 def conf_value(name):
     return getattr(conf, name, "")
-
-
-

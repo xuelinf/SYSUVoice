@@ -13,7 +13,7 @@ from django.core.validators import RegexValidator
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from fairy import conf
+from SYSUVoice import conf
 from forum.views import error
 
 import os
